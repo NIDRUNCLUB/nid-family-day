@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NID FAMILY DAY ’26 — 冰淇淋路跑 × 最特別跑衣大賽</title>
+<meta name="description" content="6/27 新莊・NID Family Day｜穿出你最特別的跑衣，邊跑邊搖出冰淇淋！" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Climate+Crisis&family=DM+Mono:wght@400;500&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --lilac:#d6c2ff;
+    --grape:#7b3ff2;
+    --mint:#a8f0c6;
+    --mint-deep:#37c87a;
+    --pink:#ffb3d9;
+    --hotpink:#ff3eb5;
+    --yolk:#ffe45c;
+    --cream:#fff6e0;
+    --ink:#1a0b2e;
+    --paper:#fff9ee;
+    --shadow:6px 6px 0 var(--ink);
+    --shadow-sm:3px 3px 0 var(--ink);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:'Noto Sans TC',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    overflow-x:hidden;
+    background-image:
+      radial-gradient(circle at 8% 12%, rgba(255,179,217,.45) 0%, transparent 22%),
+      radial-gradient(circle at 92% 18%, rgba(168,240,198,.55) 0%, transparent 25%),
+      radial-gradient(circle at 12% 78%, rgba(214,194,255,.5) 0%, transparent 28%),
+      radial-gradient(circle at 88% 88%, rgba(255,228,92,.4) 0%, transparent 22%);
+  }
+
+  /* grainy paper texture */
+  body::before{
+    content:"";
+    position:fixed;inset:0;
+    pointer-events:none;
+    z-index:1;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity:.6;
+    mix-blend-mode:multiply;
+  }
+
+  /* ───── HEADER ───── */
+  header{
+    position:relative;
+    padding:18px 28px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:3px solid var(--ink);
+    background:var(--cream);
+    z-index:5;
+  }
+  .logo{
+    font-family:'Climate Crisis',sans-serif;
+    font-size:22px;
+    letter-spacing:.02em;
+  }
+  .logo span{color:var(--hotpink);}
+  .header-right{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .sponsor-pill{
+    font-family:'DM Mono',monospace;
+    font-size:10px;
+    letter-spacing:.15em;
+    background:#fff;
+    color:var(--ink);
+    padding:7px 12px;
+    border-radius:50px;
+    border:2px solid var(--ink);
+    text-transform:uppercase;
+  }
+  .sponsor-pill strong{
+    color:var(--hotpink);
+    margin-left:2px;
+    font-weight:800;
+    letter-spacing:.05em;
+  }
+  @media(max-width:520px){
+    .sponsor-pill{display:none;} /* 手機隱藏，下面有完整贊助區 */
+  }
+  .nav-pill{
+    font-family:'DM Mono',monospace;
+    font-size:12px;
+    background:var(--ink);
+    color:var(--yolk);
+    padding:8px 14px;
+    border-radius:50px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+  }
+  .nav-pill::before{content:"●";color:var(--mint-deep);margin-right:6px;animation:blink 1.2s infinite;}
+  @keyframes blink{50%{opacity:.3;}}
+
+  /* ───── HERO ───── */
+  .hero{
+    position:relative;
+    padding:60px 28px 80px;
+    text-align:center;
+    overflow:hidden;
+    z-index:2;
+  }
+
+  .hero-eyebrow{
+    font-family:'DM Mono',monospace;
+    font-size:13px;
+    letter-spacing:.3em;
+    display:inline-block;
+    padding:6px 16px;
+    background:var(--ink);
+    color:var(--cream);
+    border-radius:50px;
+    margin-bottom:24px;
+    transform:rotate(-2deg);
+  }
+
+  h1.title{
+    font-family:'Bagel Fat One',sans-serif;
+    font-weight:normal;
+    font-size:clamp(58px,11vw,148px);
+    line-height:.88;
+    letter-spacing:-.02em;
+    margin-bottom:14px;
+    color:var(--ink);
+  }
+  h1.title .l1{
+    display:block;
+    background:linear-gradient(180deg,var(--hotpink) 0%,var(--grape) 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    text-shadow:none;
+    -webkit-text-stroke:2px var(--ink);
+    transform:rotate(-2deg);
+  }
+  h1.title .l2{
+    display:block;
+    color:var(--ink);
+    -webkit-text-stroke:0;
+    transform:rotate(1deg) translateX(-8px);
+  }
+  h1.title .l2 em{
+    font-style:normal;
+    background:var(--yolk);
+    padding:0 12px;
+    display:inline-block;
+    transform:rotate(-3deg);
+    box-shadow:var(--shadow);
+    border:3px solid var(--ink);
+  }
+
+  .hero-sub{
+    font-size:17px;
+    font-weight:500;
+    max-width:560px;
+    margin:24px auto 0;
+    line-height:1.7;
+  }
+
+  /* floating sticker drips */
+  .sticker{
+    position:absolute;
+    font-family:'Bagel Fat One',sans-serif;
+    background:#fff;
+    border:3px solid var(--ink);
+    box-shadow:var(--shadow);
+    padding:8px 16px;
+    border-radius:50px;
+    font-size:14px;
+    letter-spacing:.04em;
+    z-index:3;
+  }
+  .stk-1{top:18%;left:4%;background:var(--pink);transform:rotate(-12deg);animation:float 4s ease-in-out infinite;}
+  .stk-2{top:32%;right:5%;background:var(--mint);transform:rotate(8deg);animation:float 5s ease-in-out infinite .5s;}
+  .stk-3{top:62%;left:7%;background:var(--yolk);transform:rotate(6deg);animation:float 4.5s ease-in-out infinite 1s;}
+  .stk-4{top:72%;right:6%;background:var(--lilac);transform:rotate(-9deg);animation:float 5.2s ease-in-out infinite .3s;}
+  @keyframes float{
+    0%,100%{transform:translateY(0) rotate(var(--r,0deg));}
+    50%{transform:translateY(-12px) rotate(var(--r,0deg));}
+  }
+  .stk-1{--r:-12deg;}.stk-2{--r:8deg;}.stk-3{--r:6deg;}.stk-4{--r:-9deg;}
+
+  /* ───── ICE CREAM SVG container ───── */
+  .ice-stage{
+    margin:50px auto 0;
+    max-width:380px;
+    position:relative;
+  }
+  .ice-stage svg{width:100%;height:auto;display:block;filter:drop-shadow(8px 8px 0 var(--ink));}
+  .ice-spin{animation:spin 18s linear infinite;transform-origin:center;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  /* ───── INFO STRIP ───── */
+  .info-strip{
+    background:var(--ink);
+    color:var(--cream);
+    padding:18px 0;
+    overflow:hidden;
+    border-top:3px solid var(--ink);
+    border-bottom:3px solid var(--ink);
+    position:relative;
+    z-index:4;
+  }
+  .marquee{
+    display:flex;
+    gap:48px;
+    white-space:nowrap;
+    animation:scroll 30s linear infinite;
+    font-family:'Climate Crisis',sans-serif;
+    font-size:22px;
+    letter-spacing:.02em;
+  }
+  .marquee span{flex-shrink:0;}
+  .marquee span.alt{color:var(--mint);}
+  .marquee span.alt2{color:var(--pink);}
+  .marquee span.alt3{color:var(--yolk);}
+  @keyframes scroll{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+
+  /* ───── DETAILS CARDS ───── */
+  .details{
+    padding:80px 28px;
+    max-width:1100px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:24px;
+    position:relative;
+    z-index:2;
+  }
+  .card{
+    background:var(--cream);
+    border:3px solid var(--ink);
+    border-radius:24px;
+    padding:28px;
+    box-shadow:var(--shadow);
+    position:relative;
+    transition:transform .2s ease;
+  }
+  .card:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink);}
+  .card:nth-child(1){background:var(--pink);}
+  .card:nth-child(2){background:var(--mint);}
+  .card:nth-child(3){background:var(--yolk);}
+  .card:nth-child(4){background:var(--lilac);}
+  .card-label{
+    font-family:'DM Mono',monospace;
+    font-size:11px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    opacity:.6;
+    margin-bottom:8px;
+  }
+  .card-value{
+    font-family:'Bagel Fat One',sans-serif;
+    font-size:30px;
+    line-height:1.1;
+    margin-bottom:4px;
+  }
+  .card-note{font-size:13px;font-weight:500;}
+
+  /* ───── HOW IT WORKS ───── */
+  .how{
+    padding:60px 28px 80px;
+    max-width:1100px;
+    margin:0 auto;
+    position:relative;
+    z-index:2;
+  }
+  .section-title{
+    font-family:'Bagel Fat One',sans-serif;
+    font-size:clamp(40px,7vw,72px);
+    line-height:1;
+    margin-bottom:48px;
+    transform:rotate(-1deg);
+    display:inline-block;
+  }
+  .section-title em{
+    font-style:normal;
+    background:var(--hotpink);
+    color:var(--cream);
+    padding:2px 14px;
+    border:3px solid var(--ink);
+    box-shadow:var(--shadow-sm);
+    display:inline-block;
+    transform:rotate(2deg);
+  }
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+  }
+  .step{
+    background:#fff;
+    border:3px solid var(--ink);
+    border-radius:20px;
+    padding:24px;
+    box-shadow:var(--shadow-sm);
+    position:relative;
+  }
+  .step-num{
+    font-family:'Climate Crisis',sans-serif;
+    font-size:64px;
+    line-height:1;
+    color:var(--grape);
+    -webkit-text-stroke:2px var(--ink);
+  }
+  .step h3{
+    font-family:'Bagel Fat One',sans-serif;
+    font-weight:normal;
+    font-size:22px;
+    margin:8px 0 10px;
+  }
+  .step p{font-size:14px;line-height:1.6;}
+
+  /* ───── RECIPE SECTION ───── */
+  .recipe{
+    padding:60px 28px 80px;
+    max-width:1100px;
+    margin:0 auto;
+    position:relative;
+    z-index:2;
+  }
+  .recipe-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:32px;
+    align-items:start;
+  }
+  .recipe-card{
+    background:var(--cream);
+    border:3px solid var(--ink);
+    border-radius:24px;
+    padding:32px 28px;
+    box-shadow:var(--shadow);
+  }
+  .recipe-card h3{
+    font-family:'Bagel Fat One',sans-serif;
+    font-weight:normal;
+    font-size:26px;
+    margin-bottom:18px;
+    line-height:1.1;
+  }
+  .ingredients{
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:18px;
+  }
+  .ingredients li{
+    background:#fff;
+    border:2.5px solid var(--ink);
+    border-radius:50px;
+    padding:8px 14px;
+    font-size:13px;
+    font-weight:600;
+    box-shadow:2px 2px 0 var(--ink);
+  }
+  .ingredients li.ours{background:var(--mint);}
+  .ingredients li.byo{background:var(--pink);}
+
+  .byo-suggest{
+    background:#fff;
+    border:2.5px dashed var(--ink);
+    border-radius:14px;
+    padding:14px 16px;
+    margin-top:8px;
+  }
+  .byo-suggest-title{
+    font-size:12px;
+    font-weight:700;
+    margin-bottom:10px;
+    letter-spacing:.05em;
+  }
+  .byo-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+  }
+  .byo-tags span{
+    background:var(--yolk);
+    border:1.5px solid var(--ink);
+    border-radius:50px;
+    padding:5px 12px;
+    font-size:12px;
+    font-weight:600;
+    transform:rotate(0);
+    transition:transform .12s ease;
+  }
+  .byo-tags span:nth-child(odd){background:var(--pink);}
+  .byo-tags span:nth-child(3n){background:var(--lilac);}
+  .byo-tags span:nth-child(4n){background:var(--mint);transform:rotate(-1.5deg);}
+  .byo-tags span:nth-child(5n){transform:rotate(1.5deg);}
+  .byo-tags span:hover{transform:rotate(0) scale(1.08);}
+
+  .recipe-steps{
+    list-style:none;
+    counter-reset:rstep;
+  }
+  .recipe-steps li{
+    counter-increment:rstep;
+    padding:12px 0 12px 44px;
+    position:relative;
+    font-size:14px;
+    line-height:1.6;
+    border-bottom:1.5px dashed rgba(26,11,46,.2);
+  }
+  .recipe-steps li:last-child{border-bottom:none;}
+  .recipe-steps li::before{
+    content:counter(rstep);
+    position:absolute;
+    left:0;top:10px;
+    width:30px;height:30px;
+    background:var(--grape);
+    color:var(--cream);
+    border:2px solid var(--ink);
+    border-radius:50%;
+    font-family:'Bagel Fat One',sans-serif;
+    font-size:15px;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:2px 2px 0 var(--ink);
+  }
+
+  .must-bring{
+    margin-top:20px;
+    background:var(--hotpink);
+    color:var(--cream);
+    border:3px solid var(--ink);
+    border-radius:14px;
+    padding:14px 16px;
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    box-shadow:3px 3px 0 var(--ink);
+  }
+  .must-bring-icon{
+    font-size:32px;
+    line-height:1;
+    flex-shrink:0;
+  }
+  .must-bring strong{
+    font-size:14px;
+    display:inline-block;
+    margin-bottom:4px;
+  }
+  .must-bring span{
+    font-size:12.5px;
+    line-height:1.5;
+    opacity:.95;
+  }
+
+  /* fee notice */
+  .fee-notice{
+    background:var(--yolk);
+    border:3px solid var(--ink);
+    border-radius:24px;
+    padding:28px 24px;
+    box-shadow:var(--shadow);
+    position:relative;
+  }
+  .fee-notice::before{
+    content:"💰";
+    position:absolute;
+    top:-16px;left:-10px;
+    background:var(--hotpink);
+    border:3px solid var(--ink);
+    border-radius:50%;
+    width:48px;height:48px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:22px;
+    box-shadow:3px 3px 0 var(--ink);
+    transform:rotate(-8deg);
+  }
+  .fee-notice h4{
+    font-family:'Bagel Fat One',sans-serif;
+    font-weight:normal;
+    font-size:22px;
+    margin-bottom:14px;
+    line-height:1.2;
+  }
+  .fee-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 0;
+    border-top:2px dashed var(--ink);
+    font-size:14px;
+  }
+  .fee-row:first-of-type{border-top:none;}
+  .fee-row .who{font-weight:600;}
+  .fee-row .price{
+    font-family:'Bagel Fat One',sans-serif;
+    font-size:20px;
+    background:var(--ink);
+    color:var(--cream);
+    padding:4px 12px;
+    border-radius:50px;
+  }
+  .fee-row .price.free{background:var(--mint-deep);}
+
+  .bank-box{
+    background:#fff;
+    border:2.5px solid var(--ink);
+    border-radius:16px;
+    padding:16px 18px;
+    margin-top:18px;
+  }
+  .bank-label{
+    font-size:11px;
+    font-family:'DM Mono',monospace;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    color:#666;
+    margin-bottom:10px;
+    text-align:center;
+  }
+  .bank-table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+    margin-bottom:10px;
+  }
+  .bank-table td{
+    padding:6px 4px;
+    border-bottom:1px dashed rgba(26,11,46,.15);
+  }
+  .bank-table tr:last-child td{border-bottom:none;}
+  .bank-table td:first-child{
+    color:#888;
+    width:60px;
+    font-family:'DM Mono',monospace;
+    font-size:11px;
+    letter-spacing:.1em;
+  }
+  .bank-note{
+    font-size:12px;
+    line-height:1.6;
+    background:var(--pink);
+    border:2px solid var(--ink);
+    border-radius:10px;
+    padding:8px 12px;
+    margin-top:6px;
+  }
+
+  @media(max-width:760px){
+    .recipe-grid{grid-template-columns:1fr;}
+  }
+
+  /* ───── SPONSOR ───── */
+  .sponsor{
+    padding:20px 28px 80px;
+    max-width:1100px;
+    margin:0 auto;
+    position:relative;
+    z-index:2;
+  }
+  .sponsor-card{
+    background:#fff;
+    border:3px solid var(--ink);
+    border-radius:28px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+  }
+  .sponsor-brand{
+    background:#fff;
+    padding:40px 32px;
+    text-align:center;
+    border-right:3px solid var(--ink);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+  }
+  .sponsor-brand::before{
+    content:"";
+    position:absolute;
+    top:14px;left:14px;right:14px;bottom:14px;
+    border:2px dashed rgba(26,11,46,.2);
+    border-radius:18px;
+    pointer-events:none;
+  }
+  .sponsor-tag{
+    font-family:'DM Mono',monospace;
+    font-size:10px;
+    letter-spacing:.3em;
+    background:var(--ink);
+    color:var(--cream);
+    padding:5px 12px;
+    border-radius:50px;
+    margin-bottom:24px;
+    z-index:1;
+  }
+  .sponsor-logo{
+    width:100%;
+    max-width:260px;
+    height:auto;
+    display:block;
+    z-index:1;
+  }
+
+  .sponsor-perks{
+    padding:24px;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .perk{
+    background:var(--cream);
+    border:2.5px solid var(--ink);
+    border-radius:18px;
+    padding:18px 20px;
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+  }
+  .perk:first-child{background:var(--pink);}
+  .perk:last-child{background:var(--yolk);}
+  .perk-icon{
+    font-size:36px;
+    line-height:1;
+    flex-shrink:0;
+  }
+  .perk-label{
+    font-family:'DM Mono',monospace;
+    font-size:10px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    opacity:.65;
+    margin-bottom:4px;
+  }
+  .perk-content h4{
+    font-family:'Bagel Fat One',sans-serif;
+    font-weight:normal;
+    font-size:20px;
+    line-height:1.2;
+    margin-bottom:6px;
+  }
+  .perk-desc{
+    font-size:13px;
+    line-height:1.6;
+  }
+
+  @media(max-width:720px){
+    .sponsor-card{grid-template-columns:1fr;}
+    .sponsor-brand{
+      border-right:none;
+      border-bottom:3px solid var(--ink);
+      padding:30px 20px;
+    }
+    .sponsor-logo{max-width:220px;}
+  }
+
+  /* ───── FORM ───── */
+  .form-wrap{
+    background:var(--ink);
+    padding:80px 28px;
+    position:relative;
+    z-index:2;
+    border-top:3px solid var(--ink);
+  }
+  .form-inner{
+    max-width:680px;
+    margin:0 auto;
+  }
+  .form-eyebrow{
+    text-align:center;
+    font-family:'DM Mono',monospace;
+    font-size:12px;
+    letter-spacing:.3em;
+    color:var(--mint);
+    margin-bottom:14px;
+  }
+  .form-title{
+    text-align:center;
+    font-family:'Bagel Fat One',sans-serif;
+    font-size:clamp(40px,7vw,68px);
+    color:var(--cream);
+    line-height:1;
+    margin-bottom:14px;
+  }
+  .form-title em{
+    font-style:normal;
+    background:var(--yolk);
+    color:var(--ink);
+    padding:2px 12px;
+    display:inline-block;
+    transform:rotate(-2deg);
+    border:3px solid var(--cream);
+  }
+  .quota-pill{
+    display:block;
+    margin:0 auto 36px;
+    width:fit-content;
+    font-family:'DM Mono',monospace;
+    font-size:13px;
+    background:var(--cream);
+    color:var(--ink);
+    padding:8px 18px;
+    border-radius:50px;
+    border:2px solid var(--cream);
+  }
+  .quota-pill b{color:var(--hotpink);}
+
+  form{
+    background:var(--cream);
+    border-radius:28px;
+    padding:40px 32px;
+    border:3px solid var(--cream);
+    box-shadow:10px 10px 0 var(--hotpink);
+  }
+  .field{margin-bottom:22px;}
+  .field label{
+    display:block;
+    font-weight:700;
+    font-size:14px;
+    margin-bottom:8px;
+    font-family:'DM Mono',monospace;
+    letter-spacing:.05em;
+  }
+  .field label .req{color:var(--hotpink);}
+  .field input[type=text],
+  .field input[type=email],
+  .field input[type=number],
+  .field select{
+    width:100%;
+    padding:14px 16px;
+    border:2.5px solid var(--ink);
+    border-radius:12px;
+    font-family:'Noto Sans TC',sans-serif;
+    font-size:15px;
+    background:#fff;
+    transition:all .15s ease;
+  }
+  .field input:focus,
+  .field select:focus{
+    outline:none;
+    background:var(--yolk);
+    transform:translate(-2px,-2px);
+    box-shadow:4px 4px 0 var(--ink);
+  }
+  .field select{
+    appearance:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%231a0b2e' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 18px center;
+    padding-right:42px;
+  }
+
+  /* radio + button groups */
+  .opt-group{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  .opt-group.one-col{grid-template-columns:1fr;}
+  .opt{
+    position:relative;
+    cursor:pointer;
+  }
+  .opt input{
+    position:absolute;
+    opacity:0;
+    pointer-events:none;
+  }
+  .opt span{
+    display:block;
+    padding:14px 16px;
+    border:2.5px solid var(--ink);
+    border-radius:12px;
+    background:#fff;
+    font-size:14px;
+    font-weight:500;
+    text-align:center;
+    transition:all .15s ease;
+  }
+  .opt:hover span{background:var(--pink);}
+  .opt input:checked + span{
+    background:var(--grape);
+    color:var(--cream);
+    transform:translate(-2px,-2px);
+    box-shadow:4px 4px 0 var(--ink);
+  }
+  .opt input:focus-visible + span{
+    outline:3px dashed var(--hotpink);
+    outline-offset:3px;
+  }
+
+  /* friends conditional */
+  #friendCountField{
+    display:none;
+    animation:slideDown .25s ease;
+  }
+  #friendCountField.show{display:block;}
+  #transferField{
+    display:none;
+    animation:slideDown .25s ease;
+  }
+  #transferField.show{display:block;}
+  @keyframes slideDown{
+    from{opacity:0;transform:translateY(-8px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+
+  /* inline bank info inside friend count field */
+  .bank-inline{
+    margin-top:14px;
+    background:#fff6e0;
+    border:2.5px solid var(--ink);
+    border-radius:12px;
+    padding:14px 16px;
+  }
+  .bank-inline-label{
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:10px;
+    color:var(--ink);
+  }
+  .bank-inline table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+  }
+  .bank-inline td{
+    padding:5px 4px;
+    border-bottom:1px dashed rgba(26,11,46,.15);
+  }
+  .bank-inline tr:last-child td{border-bottom:none;}
+  .bank-inline td:first-child{
+    color:#888;
+    width:50px;
+    font-family:'DM Mono',monospace;
+    font-size:11px;
+    letter-spacing:.05em;
+  }
+
+  /* friends detail dynamic blocks */
+  #friendsDetailField{
+    display:none;
+  }
+  #friendsDetailField.show{
+    display:block;
+    animation:slideDown .25s ease;
+  }
+  .friends-detail-title{
+    font-family:'DM Mono',monospace;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.1em;
+    background:var(--grape);
+    color:var(--cream);
+    padding:8px 14px;
+    border-radius:50px;
+    display:inline-block;
+    margin-bottom:14px;
+  }
+  .friend-block{
+    background:#fff;
+    border:2.5px solid var(--ink);
+    border-radius:14px;
+    padding:14px 16px;
+    margin-bottom:12px;
+    position:relative;
+  }
+  .friend-block-label{
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:10px;
+    color:var(--grape);
+    font-family:'DM Mono',monospace;
+    letter-spacing:.05em;
+  }
+  .friend-input{
+    width:100%;
+    padding:10px 14px;
+    border:2px solid var(--ink);
+    border-radius:10px;
+    font-family:'Noto Sans TC',sans-serif;
+    font-size:14px;
+    background:#fff;
+    margin-bottom:8px;
+    transition:all .15s ease;
+  }
+  .friend-input:last-child{margin-bottom:0;}
+  .friend-input:focus{
+    outline:none;
+    background:var(--yolk);
+    transform:translate(-1px,-1px);
+    box-shadow:3px 3px 0 var(--ink);
+  }
+  .friend-input.has-error{
+    background:#ffebee;
+    border-color:var(--hotpink);
+  }
+
+  .submit-btn{
+    width:100%;
+    padding:20px;
+    background:var(--ink);
+    color:var(--yolk);
+    border:none;
+    border-radius:14px;
+    font-family:'Bagel Fat One',sans-serif;
+    font-size:24px;
+    cursor:pointer;
+    margin-top:12px;
+    letter-spacing:.04em;
+    transition:all .15s ease;
+    position:relative;
+    overflow:hidden;
+  }
+  .submit-btn:hover{
+    background:var(--hotpink);
+    color:var(--cream);
+    transform:translate(-3px,-3px);
+    box-shadow:6px 6px 0 var(--mint-deep);
+  }
+  .submit-btn:disabled{
+    background:#888;
+    color:#ccc;
+    cursor:not-allowed;
+    transform:none;
+    box-shadow:none;
+  }
+
+  .err{
+    color:var(--hotpink);
+    font-size:13px;
+    margin-top:6px;
+    font-weight:500;
+    display:none;
+  }
+  .err.show{display:block;}
+
+  /* ───── SUCCESS SCREEN ───── */
+  .success{
+    display:none;
+    background:var(--mint);
+    border:3px solid var(--ink);
+    border-radius:28px;
+    padding:48px 32px;
+    text-align:center;
+    box-shadow:10px 10px 0 var(--hotpink);
+  }
+  .success.show{display:block;animation:pop .4s ease;}
+  @keyframes pop{
+    0%{transform:scale(.85);opacity:0;}
+    60%{transform:scale(1.03);}
+    100%{transform:scale(1);opacity:1;}
+  }
+  .success-emoji{font-size:64px;margin-bottom:10px;}
+  .success h2{
+    font-family:'Bagel Fat One',sans-serif;
+    font-weight:normal;
+    font-size:42px;
+    line-height:1;
+    margin-bottom:14px;
+  }
+  .success p{font-size:15px;line-height:1.7;margin-bottom:24px;}
+  .line-btn{
+    display:inline-block;
+    background:var(--ink);
+    color:var(--cream);
+    text-decoration:none;
+    padding:18px 32px;
+    border-radius:50px;
+    font-family:'Bagel Fat One',sans-serif;
+    font-size:18px;
+    letter-spacing:.04em;
+    transition:all .15s ease;
+    border:3px solid var(--ink);
+  }
+  .line-btn:hover{
+    background:#06c755;
+    color:#fff;
+    transform:translate(-3px,-3px);
+    box-shadow:5px 5px 0 var(--ink);
+  }
+  .line-btn::before{content:"💚 ";}
+
+  /* loading state */
+  .loader{
+    display:none;
+    width:32px;
+    height:32px;
+    border:4px solid var(--cream);
+    border-top-color:var(--hotpink);
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+    margin:0 auto;
+  }
+  .loader.show{display:block;}
+
+  /* ───── FOOTER ───── */
+  footer{
+    background:var(--ink);
+    color:var(--cream);
+    padding:40px 28px;
+    text-align:center;
+    font-family:'DM Mono',monospace;
+    font-size:12px;
+    letter-spacing:.1em;
+    border-top:3px solid var(--hotpink);
+    position:relative;
+    z-index:2;
+  }
+  footer .heart{color:var(--hotpink);}
+
+  /* mobile tweaks */
+  @media(max-width:640px){
+    .sticker{font-size:11px;padding:6px 12px;}
+    .stk-1,.stk-2,.stk-3,.stk-4{display:block;}
+    .ice-stage{max-width:260px;margin-top:30px;}
+    form{padding:28px 20px;}
+    .opt-group{grid-template-columns:1fr;}
+    header{padding:14px 18px;}
+    .logo{font-size:18px;}
+    .nav-pill{font-size:10px;padding:6px 10px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">NID<span>★</span>RUN CLUB</div>
+  <div class="header-right">
+    <span class="sponsor-pill">SPONSORED BY <strong>CeraVe</strong></span>
+    <div class="nav-pill">06.27 · FAMILY DAY ’26</div>
+  </div>
+</header>
+
+<!-- ════════════ HERO ════════════ -->
+<section class="hero">
+  <div class="sticker stk-1">🍦 ICE + SALT</div>
+  <div class="sticker stk-2">★ BYO TOPPING ★</div>
+  <div class="sticker stk-3">3KM FUN RUN</div>
+  <div class="sticker stk-4">SO COOL!</div>
+
+  <span class="hero-eyebrow">NID FAMILY DAY · VOL.3</span>
+  <h1 class="title">
+    <span class="l1">ICE CREAM</span>
+    <span class="l2">RUN <em>2026</em></span>
+  </h1>
+  <p class="hero-sub">穿出你最特別的跑衣，<br>一起製作屬於你的冰淇淋。<br>歡迎帶上你想加的配料！</p>
+
+  <!-- 冰淇淋 SVG -->
+  <div class="ice-stage">
+    <svg viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="scoop1" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#ffd6e8"/>
+          <stop offset="100%" stop-color="#ff80b8"/>
+        </linearGradient>
+        <linearGradient id="scoop2" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#c8f7d8"/>
+          <stop offset="100%" stop-color="#5dd998"/>
+        </linearGradient>
+        <linearGradient id="scoop3" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#e3d4ff"/>
+          <stop offset="100%" stop-color="#a585e8"/>
+        </linearGradient>
+        <linearGradient id="cone" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#ffd97a"/>
+          <stop offset="100%" stop-color="#d49538"/>
+        </linearGradient>
+      </defs>
+
+      <!-- 旋轉星星 -->
+      <g class="ice-spin" style="transform-origin:150px 190px;">
+        <g fill="#ffe45c" stroke="#1a0b2e" stroke-width="3">
+          <path d="M40 80 L48 95 L65 98 L52 110 L56 128 L40 119 L24 128 L28 110 L15 98 L32 95 Z"/>
+          <path d="M250 60 L256 72 L270 74 L260 84 L262 98 L250 91 L238 98 L240 84 L230 74 L244 72 Z" transform="scale(.8) translate(60 20)"/>
+          <path d="M270 200 L276 212 L290 214 L280 224 L282 238 L270 231 L258 238 L260 224 L250 214 L264 212 Z" transform="scale(.7) translate(110 80)"/>
+        </g>
+      </g>
+
+      <!-- 蛋捲 -->
+      <polygon points="100,210 200,210 150,360" fill="url(#cone)" stroke="#1a0b2e" stroke-width="4"/>
+      <!-- 蛋捲格紋 -->
+      <g stroke="#1a0b2e" stroke-width="2" fill="none" opacity=".6">
+        <line x1="115" y1="225" x2="185" y2="225"/>
+        <line x1="125" y1="245" x2="175" y2="245"/>
+        <line x1="132" y1="265" x2="168" y2="265"/>
+        <line x1="138" y1="285" x2="162" y2="285"/>
+        <line x1="120" y1="220" x2="180" y2="290" opacity=".4"/>
+        <line x1="180" y1="220" x2="120" y2="290" opacity=".4"/>
+      </g>
+
+      <!-- 三球冰淇淋 -->
+      <ellipse cx="150" cy="210" rx="58" ry="22" fill="#1a0b2e"/>
+      <circle cx="120" cy="180" r="40" fill="url(#scoop1)" stroke="#1a0b2e" stroke-width="4"/>
+      <circle cx="180" cy="175" r="40" fill="url(#scoop2)" stroke="#1a0b2e" stroke-width="4"/>
+      <circle cx="150" cy="135" r="42" fill="url(#scoop3)" stroke="#1a0b2e" stroke-width="4"/>
+
+      <!-- 巧克力醬滴落 -->
+      <path d="M115 165 Q108 175 110 195 Q104 200 100 210 Q90 215 95 230" fill="none" stroke="#5a2e0e" stroke-width="6" stroke-linecap="round"/>
+      <path d="M175 158 Q183 168 180 185 Q188 195 184 208" fill="none" stroke="#5a2e0e" stroke-width="6" stroke-linecap="round"/>
+
+      <!-- 撒糖點點 -->
+      <g>
+        <circle cx="135" cy="120" r="3" fill="#ff3eb5"/>
+        <circle cx="160" cy="110" r="3" fill="#37c87a"/>
+        <circle cx="170" cy="130" r="3" fill="#ffe45c"/>
+        <circle cx="130" cy="145" r="3" fill="#7b3ff2"/>
+        <circle cx="155" cy="155" r="3" fill="#ff3eb5"/>
+        <circle cx="105" cy="170" r="3" fill="#ffe45c"/>
+        <circle cx="200" cy="170" r="3" fill="#7b3ff2"/>
+      </g>
+
+      <!-- 櫻桃 -->
+      <circle cx="150" cy="95" r="12" fill="#ff3eb5" stroke="#1a0b2e" stroke-width="3"/>
+      <path d="M150 83 Q155 70 165 65" fill="none" stroke="#37c87a" stroke-width="4" stroke-linecap="round"/>
+      <ellipse cx="146" cy="92" rx="3" ry="2" fill="#fff" opacity=".7"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ════════════ MARQUEE ════════════ -->
+<div class="info-strip">
+  <div class="marquee">
+    <span>★ 6/27 SAT</span>
+    <span class="alt">新莊 NEW TAIPEI</span>
+    <span class="alt2">100 SPOTS ONLY</span>
+    <span class="alt3">SPONSORED BY CERAVE</span>
+    <span>BRING A FRIEND</span>
+    <span class="alt">★ 6/27 SAT</span>
+    <span class="alt2">新莊 NEW TAIPEI</span>
+    <span class="alt3">100 SPOTS ONLY</span>
+    <span>SPONSORED BY CERAVE</span>
+    <span class="alt">BRING A FRIEND</span>
+  </div>
+</div>
+
+<!-- ════════════ DETAILS ════════════ -->
+<section class="details">
+  <div class="card">
+    <div class="card-label">DATE / 日期</div>
+    <div class="card-value">06.27</div>
+    <div class="card-note">Saturday · 週六</div>
+  </div>
+  <div class="card">
+    <div class="card-label">LOCATION / 集合地點</div>
+    <div class="card-value">新莊站</div>
+    <div class="card-note">捷運新莊站 3 號出口</div>
+  </div>
+  <div class="card">
+    <div class="card-label">DISTANCE / 距離</div>
+    <div class="card-value">3KM</div>
+    <div class="card-note">輕鬆跑 · 邊跑邊做冰淇淋</div>
+  </div>
+  <div class="card">
+    <div class="card-label">QUOTA / 名額</div>
+    <div class="card-value">100人</div>
+    <div class="card-note">含朋友名額 · 額滿截止</div>
+  </div>
+  <div class="card">
+    <div class="card-label">FEE / 費用</div>
+    <div class="card-value">免費</div>
+    <div class="card-note">NID 學員專屬<br>非學員 NT$200/人</div>
+  </div>
+</section>
+
+<!-- ════════════ HOW IT WORKS ════════════ -->
+<section class="how">
+  <h2 class="section-title">怎麼玩 <em>HOW IT WORKS</em></h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h3>翻箱倒櫃</h3>
+      <p>從衣櫃挖出你最特別、最有故事、最有 swag 的那件跑衣。</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h3>邊跑邊做</h3>
+      <p>當天我們提供材料，揹著一起跑 — 跑步的晃動就是製作過程（下方有詳細食譜！）</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h3>終點開吃</h3>
+      <p>回到終點打開你的冰淇淋，跟夥伴交換口味、交換故事。</p>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <h3>票選最 ICON</h3>
+      <p>大家一起投票選出「最特別跑衣」前三名，獎品等你拿。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ RECIPE / FEE ════════════ -->
+<section class="recipe">
+  <h2 class="section-title">冰淇淋 <em>怎麼做？</em></h2>
+
+  <div class="recipe-grid">
+
+    <!-- 食譜卡 -->
+    <div class="recipe-card">
+      <h3>🍦 跑步冰淇淋食譜</h3>
+
+      <p style="font-size:12px;font-family:'DM Mono',monospace;letter-spacing:.1em;margin-bottom:10px;color:#666;">材料</p>
+      <ul class="ingredients">
+        <li class="ours">鮮奶油 <small>(NID 提供)</small></li>
+        <li class="ours">糖 <small>(NID 提供)</small></li>
+        <li class="ours">冰塊 <small>(NID 提供)</small></li>
+        <li class="ours">粗鹽 <small>(NID 提供)</small></li>
+        <li class="byo">一種你想加的配料 <small>(自備)</small></li>
+      </ul>
+
+      <div class="byo-suggest">
+        <p class="byo-suggest-title">🍪 配料靈感清單</p>
+        <div class="byo-tags">
+          <span>OREO</span>
+          <span>巧克力碎片</span>
+          <span>草莓餅乾</span>
+          <span>棉花糖</span>
+          <span>脆片</span>
+          <span>焦糖醬</span>
+          <span>玉米片</span>
+          <span>可可球</span>
+          <span>麥片</span>
+        </div>
+      </div>
+
+      <p style="font-size:12px;font-family:'DM Mono',monospace;letter-spacing:.1em;margin:18px 0 10px;color:#666;">步驟</p>
+      <ol class="recipe-steps">
+        <li><strong>內袋：</strong>鮮奶油 + 糖 + 你自備的那種配料，封好。</li>
+        <li><strong>外袋：</strong>冰塊 + 粗鹽（鹽降低冰點，讓溫度更低），把內袋丟進去封好。</li>
+        <li><strong>揹著跑！</strong> 全程 3 公里，跑步的晃動 = 攪拌動作，鮮奶油慢慢結冰。</li>
+        <li>跑完打開內袋，就是一份新鮮的冰淇淋 ✨</li>
+      </ol>
+
+      <div class="must-bring">
+        <span class="must-bring-icon">🎒</span>
+        <div>
+          <strong>當天請務必自備：</strong><br>
+          <span>① 一個可以背在身上的小包包（後背包、腰包、斜背包都行）<br>② 一種你想加的配料（範例見上方清單）</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 材料費 + 匯款資訊卡 -->
+    <div class="fee-notice">
+      <h4>材料費說明</h4>
+      <div class="fee-row">
+        <span class="who">NID 學員本人</span>
+        <span class="price free">免費</span>
+      </div>
+      <div class="fee-row">
+        <span class="who">每位同行朋友</span>
+        <span class="price">$200</span>
+      </div>
+
+      <div class="bank-box">
+        <p class="bank-label">如有帶朋友，請於報名後匯款</p>
+        <table class="bank-table">
+          <tr><td>戶名</td><td><strong>江凱為</strong></td></tr>
+          <tr><td>銀行</td><td><strong>822 中國信託銀行</strong></td></tr>
+          <tr><td>分行</td><td>瑞光分行</td></tr>
+          <tr><td>帳號</td><td><strong>7165-4022-7006</strong></td></tr>
+        </table>
+        <p class="bank-note">
+          匯款後請填寫帳號後 5 碼，並私訊 <strong>NID 官方帳號</strong> 確認，名額才算保留 ✅
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════ SPONSOR ════════════ -->
+<section class="sponsor">
+  <h2 class="section-title">特別感謝 <em>SPONSOR</em></h2>
+
+  <div class="sponsor-card">
+    <div class="sponsor-brand">
+      <span class="sponsor-tag">SPONSORED BY</span>
+      <img src="cerave-logo.jpg" alt="CeraVe 適樂膚" class="sponsor-logo" />
+    </div>
+
+    <div class="sponsor-perks">
+      <div class="perk">
+        <div class="perk-icon">🎁</div>
+        <div class="perk-content">
+          <p class="perk-label">當天打卡禮</p>
+          <h4>到場打卡就送 CeraVe 小禮物</h4>
+          <p class="perk-desc">當天到場 IG / FB 打卡標記 NID，就可以領取適樂膚提供的好禮一份</p>
+        </div>
+      </div>
+
+      <div class="perk">
+        <div class="perk-icon">🏆</div>
+        <div class="perk-content">
+          <p class="perk-label">最特別跑衣大賞</p>
+          <h4>前三名獨家獎品</h4>
+          <p class="perk-desc">由全體跑者一起投票，前三名可獲得適樂膚提供的精選獎項，運動後的肌膚保養一次到位</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ FORM ════════════ -->
+<section class="form-wrap" id="register">
+  <div class="form-inner">
+    <p class="form-eyebrow">// REGISTRATION OPEN //</p>
+    <h2 class="form-title">立刻 <em>報名</em></h2>
+    <span class="quota-pill">剩餘名額 <b id="quotaLeft">查詢中…</b> / 100</span>
+
+    <!-- 報名表單 -->
+    <form id="regForm" novalidate>
+      <div class="field">
+        <label for="name">姓名 <span class="req">*</span></label>
+        <input type="text" id="name" name="name" required autocomplete="name" placeholder="你的名字" />
+        <p class="err" data-for="name">請填寫姓名</p>
+      </div>
+
+      <div class="field">
+        <label for="classGroup">NID 班級 <span class="req">*</span></label>
+        <select id="classGroup" name="classGroup" required>
+          <option value="">請選擇你目前的班級</option>
+          <option>週一北田跑步班</option>
+          <option>週一中和跑步班</option>
+          <option>週一中正初階跑步班</option>
+          <option>週一大同初階跑步班</option>
+          <option>週一北田跑者養成班</option>
+          <option>週二內湖跑步班</option>
+          <option>週二龍江跑步班</option>
+          <option>週二中正初階跑步班</option>
+          <option>週二北田初階跑步班</option>
+          <option>週二板一初階跑步班</option>
+          <option>週三北田跑步班</option>
+          <option>週三板一跑步班</option>
+          <option>週三內湖跑步班</option>
+          <option>週三北田初階跑步班</option>
+          <option>週三新莊初階跑步班</option>
+          <option>週三信義初階跑步班</option>
+          <option>週四大同跑步班</option>
+          <option>週四北田初階跑步班</option>
+          <option>週四內湖初階跑步班</option>
+          <option>週四板一初階跑步班</option>
+          <option>週四中正跑步班(NEW)</option>
+          <option>週四龍江跑者養成班</option>
+          <option>週五新莊跑步班</option>
+          <option>週五北田跑步班</option>
+          <option>週五板二初階跑步班</option>
+          <option>週五內湖初階跑步班</option>
+          <option>週六汐止早跑班</option>
+          <option>週六北田初階早跑班</option>
+          <option>週六Hyrox訓練營</option>
+          <option>週日北田早跑班</option>
+        </select>
+        <p class="err" data-for="classGroup">請選擇班級</p>
+      </div>
+
+      <div class="field">
+        <label for="email">Email <span class="req">*</span></label>
+        <input type="email" id="email" name="email" required autocomplete="email" placeholder="name@example.com" />
+        <p class="err" data-for="email">請填寫正確的 Email</p>
+      </div>
+
+      <div class="field">
+        <label>是否帶朋友來？ <span class="req">*</span></label>
+        <div class="opt-group">
+          <label class="opt"><input type="radio" name="bringFriend" value="是" required /><span>是 · 帶朋友</span></label>
+          <label class="opt"><input type="radio" name="bringFriend" value="否" /><span>否 · 自己來</span></label>
+        </div>
+        <p class="err" data-for="bringFriend">請選擇</p>
+      </div>
+
+      <div class="field" id="friendCountField">
+        <label for="friendCount">帶幾位朋友？ <span class="req">*</span></label>
+        <input type="number" id="friendCount" name="friendCount" min="1" max="5" placeholder="例如：2" />
+        <p class="err" data-for="friendCount">請填入 1-5 之間的數字</p>
+
+        <!-- 匯款資訊區塊 -->
+        <div class="bank-inline">
+          <p class="bank-inline-label">📮 朋友材料費 NT$200/人，請匯款</p>
+          <table>
+            <tr><td>戶名</td><td><strong>江凱為</strong></td></tr>
+            <tr><td>銀行</td><td><strong>822 中國信託銀行</strong></td></tr>
+            <tr><td>分行</td><td>瑞光分行</td></tr>
+            <tr><td>帳號</td><td><strong>7165-4022-7006</strong></td></tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- 朋友詳細資料 (動態產生) -->
+      <div class="field" id="friendsDetailField"></div>
+
+      <div class="field" id="transferField">
+        <label for="transferLast5">匯款帳號後 5 碼 <span class="req">*</span></label>
+        <input type="text" id="transferLast5" name="transferLast5" maxlength="5" pattern="[0-9]{5}" inputmode="numeric" placeholder="例如：12345" />
+        <p style="font-size:12px;margin-top:8px;color:#666;font-weight:500;line-height:1.6;">
+          匯款後請填入帳號後 5 碼，並請<strong>私訊 NID 官方帳號</strong>進行對帳，確認後名額才正式保留。
+        </p>
+        <p class="err" data-for="transferLast5">請填入正確的 5 碼數字</p>
+      </div>
+
+      <div class="field">
+        <label>平常跑步的頻率？ <span class="req">*</span></label>
+        <div class="opt-group">
+          <label class="opt"><input type="radio" name="frequency" value="每週 1 次以下" required /><span>每週 1 次以下</span></label>
+          <label class="opt"><input type="radio" name="frequency" value="每週 1-2 次" /><span>每週 1-2 次</span></label>
+          <label class="opt"><input type="radio" name="frequency" value="每週 3-4 次" /><span>每週 3-4 次</span></label>
+          <label class="opt"><input type="radio" name="frequency" value="每週 5 次以上" /><span>每週 5 次以上</span></label>
+        </div>
+        <p class="err" data-for="frequency">請選擇</p>
+      </div>
+
+      <div class="field">
+        <label>這次為什麼會想來參加？ <span class="req">*</span></label>
+        <div class="opt-group one-col">
+          <label class="opt"><input type="radio" name="reason" value="想認識更多 NID 的夥伴" required /><span>想認識更多 NID 的夥伴</span></label>
+          <label class="opt"><input type="radio" name="reason" value="覺得活動主題很特別" /><span>覺得活動主題很特別</span></label>
+          <label class="opt"><input type="radio" name="reason" value="想秀我珍藏的跑衣" /><span>想秀我珍藏的跑衣</span></label>
+          <label class="opt"><input type="radio" name="reason" value="單純想吃冰淇淋" /><span>單純想吃冰淇淋 🍦</span></label>
+          <label class="opt"><input type="radio" name="reason" value="教練/朋友揪我來" /><span>教練/朋友揪我來</span></label>
+          <label class="opt"><input type="radio" name="reason" value="想換個方式跑步" /><span>想換個方式跑步</span></label>
+        </div>
+        <p class="err" data-for="reason">請選擇</p>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submitBtn">SEND IT! →</button>
+      <div class="loader" id="loader"></div>
+    </form>
+
+    <!-- 成功畫面 -->
+    <div class="success" id="successScreen">
+      <div class="success-emoji">🍦✨</div>
+      <h2>報名成功！</h2>
+      <p>
+        確認信會在幾分鐘內寄到你的信箱。<br>
+        最後一步 — 加入活動 LINE 社群，<br>
+        當天集合地點、注意事項都在裡面！
+      </p>
+      <a class="line-btn" href="https://line.me/ti/g2/5BBOmVbrCiD6m8Uzy6xigwzM1qihEJ_U0JUcKA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener">
+        加入活動 LINE 社群
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © NID RUN CLUB · 恩艾迪有限公司 · made with <span class="heart">♥</span> in TAIPEI
+</footer>
+
+<script>
+  /* ═══════════════════════════════════════════
+     ⚙️  CONFIG —— 部署時把這裡換成你的 Apps Script /exec 網址
+     ═══════════════════════════════════════════ */
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzc8KUniTPjic7wft_wYNtNOEUdrr052yoLu-NqO-fxD4CdTzmgE9PI0owzfFgOSU-3/exec";
+  const TOTAL_QUOTA = 100;
+
+  /* ───── 帶朋友欄位 顯隱 ───── */
+  const friendField = document.getElementById("friendCountField");
+  const friendInput = document.getElementById("friendCount");
+  const friendsDetailField = document.getElementById("friendsDetailField");
+  const transferField = document.getElementById("transferField");
+  const transferInput = document.getElementById("transferLast5");
+
+  // 動態產生朋友姓名 + Email 欄位
+  function renderFriendInputs(n) {
+    if (!n || n < 1) {
+      friendsDetailField.innerHTML = "";
+      friendsDetailField.classList.remove("show");
+      return;
+    }
+    if (n > 5) n = 5;
+    let html = `<div class="friends-detail-title">📝 朋友資料 (${n} 位)</div>`;
+    for (let i = 1; i <= n; i++) {
+      html += `
+        <div class="friend-block">
+          <div class="friend-block-label">朋友 ${i}</div>
+          <input type="text" name="friend${i}Name" class="friend-input" placeholder="姓名" autocomplete="off" />
+          <input type="email" name="friend${i}Email" class="friend-input" placeholder="Email" autocomplete="off" />
+        </div>
+      `;
+    }
+    html += `<p style="font-size:12px;color:#666;line-height:1.6;margin-top:4px;">
+      💡 報名成功後，所有人的資訊會整合在一封信寄給<strong>你（主登記者）</strong>。
+    </p>`;
+    friendsDetailField.innerHTML = html;
+    friendsDetailField.classList.add("show");
+  }
+
+  // 朋友人數變動 → 重新產生欄位
+  friendInput.addEventListener("input", e => {
+    let n = parseInt(e.target.value, 10);
+    if (n > 5) { n = 5; e.target.value = 5; }
+    if (n < 0) { e.target.value = ""; n = 0; }
+    renderFriendInputs(n);
+  });
+
+  // 是否帶朋友 → 顯/隱整組欄位
+  document.querySelectorAll('input[name="bringFriend"]').forEach(r => {
+    r.addEventListener("change", e => {
+      if (e.target.value === "是") {
+        friendField.classList.add("show");
+        transferField.classList.add("show");
+        friendInput.required = true;
+        transferInput.required = true;
+      } else {
+        friendField.classList.remove("show");
+        transferField.classList.remove("show");
+        friendsDetailField.classList.remove("show");
+        friendsDetailField.innerHTML = "";
+        friendInput.required = false;
+        transferInput.required = false;
+        friendInput.value = "";
+        transferInput.value = "";
+        document.querySelector('[data-for="friendCount"]').classList.remove("show");
+        document.querySelector('[data-for="transferLast5"]').classList.remove("show");
+      }
+    });
+  });
+
+  /* ───── 表單驗證 + 送出 ───── */
+  const form = document.getElementById("regForm");
+  const submitBtn = document.getElementById("submitBtn");
+  const loader = document.getElementById("loader");
+  const successScreen = document.getElementById("successScreen");
+
+  function showErr(name, show){
+    const el = document.querySelector(`.err[data-for="${name}"]`);
+    if (el) el.classList.toggle("show", show);
+  }
+
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+
+    // 清掉舊錯誤
+    document.querySelectorAll(".err").forEach(x => x.classList.remove("show"));
+
+    const data = new FormData(form);
+    const payload = Object.fromEntries(data.entries());
+
+    // 驗證
+    let valid = true;
+    if (!payload.name?.trim()) { showErr("name", true); valid = false; }
+    if (!payload.classGroup)    { showErr("classGroup", true); valid = false; }
+    if (!payload.email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(payload.email)) { showErr("email", true); valid = false; }
+    if (!payload.bringFriend)   { showErr("bringFriend", true); valid = false; }
+    if (payload.bringFriend === "是") {
+      const n = parseInt(payload.friendCount, 10);
+      if (!n || n < 1 || n > 5) { showErr("friendCount", true); valid = false; }
+      if (!payload.transferLast5 || !/^\d{5}$/.test(payload.transferLast5.trim())) {
+        showErr("transferLast5", true); valid = false;
+      }
+      // 驗證每位朋友
+      document.querySelectorAll(".friend-input").forEach(el => el.classList.remove("has-error"));
+      const emailRe = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+      for (let i = 1; i <= (n || 0); i++) {
+        const nm = (payload[`friend${i}Name`] || "").trim();
+        const em = (payload[`friend${i}Email`] || "").trim();
+        if (!nm) {
+          document.querySelector(`[name="friend${i}Name"]`).classList.add("has-error");
+          valid = false;
+        }
+        if (!em || !emailRe.test(em)) {
+          document.querySelector(`[name="friend${i}Email"]`).classList.add("has-error");
+          valid = false;
+        }
+      }
+    }
+    if (!payload.frequency)     { showErr("frequency", true); valid = false; }
+    if (!payload.reason)        { showErr("reason", true); valid = false; }
+
+    if (!valid) {
+      const firstErr = document.querySelector(".err.show");
+      if (firstErr) firstErr.scrollIntoView({behavior:"smooth", block:"center"});
+      return;
+    }
+
+    // 送出
+    submitBtn.disabled = true;
+    submitBtn.style.display = "none";
+    loader.classList.add("show");
+
+    try {
+      // 用 text/plain 避免 CORS preflight
+      const res = await fetch(SCRIPT_URL, {
+        method: "POST",
+        headers: {"Content-Type": "text/plain;charset=utf-8"},
+        body: JSON.stringify(payload)
+      });
+      const result = await res.json();
+
+      loader.classList.remove("show");
+
+      if (result.status === "ok") {
+        form.style.display = "none";
+        successScreen.classList.add("show");
+        successScreen.scrollIntoView({behavior:"smooth", block:"center"});
+      } else if (result.status === "full") {
+        alert("很可惜，活動名額已滿了 😢\n請關注 NID 之後的活動！");
+        submitBtn.disabled = false;
+        submitBtn.style.display = "block";
+      } else {
+        throw new Error(result.message || "送出失敗");
+      }
+    } catch (err) {
+      loader.classList.remove("show");
+      alert("送出時發生錯誤，請稍後再試或聯絡 NID 教練。\n\n" + err.message);
+      submitBtn.disabled = false;
+      submitBtn.style.display = "block";
+    }
+  });
+
+  /* ───── 抓剩餘名額 ───── */
+  async function loadQuota(){
+    if (!SCRIPT_URL || SCRIPT_URL.includes("REPLACE_WITH")) return;
+    try {
+      const res = await fetch(SCRIPT_URL + "?action=quota");
+      const j = await res.json();
+      if (typeof j.left === "number") {
+        document.getElementById("quotaLeft").textContent = j.left;
+      }
+    } catch(e){
+      document.getElementById("quotaLeft").textContent = "—";
+    }
+  }
+  loadQuota();
+</script>
+</body>
+</html>
