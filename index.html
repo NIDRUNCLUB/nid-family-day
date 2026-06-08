@@ -1161,7 +1161,7 @@
 <section class="hero">
   <div class="sticker stk-1">🍦 ICE + SALT</div>
   <div class="sticker stk-2">★ BYO TOPPING ★</div>
-  <div class="sticker stk-3">3KM FUN RUN</div>
+  <div class="sticker stk-3">4KM FUN RUN</div>
   <div class="sticker stk-4">SO COOL!</div>
 
   <span class="hero-eyebrow">NID FAMILY DAY · VOL.3</span>
@@ -1273,7 +1273,7 @@
   </div>
   <div class="card">
     <div class="card-label">DISTANCE / 距離</div>
-    <div class="card-value">3KM</div>
+    <div class="card-value">4KM</div>
     <div class="card-note">輕鬆跑 · 邊跑邊做冰淇淋</div>
   </div>
   <div class="card">
@@ -1301,7 +1301,7 @@
           <span class="station-exit">2 號出口</span>
         </div>
         <div class="route-arrow">
-          <span>3 公里</span>
+          <span>4 公里</span>
           <svg viewBox="0 0 60 20" xmlns="http://www.w3.org/2000/svg">
             <path d="M 2 10 L 50 10" stroke="#1a0b2e" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
             <path d="M 45 4 L 56 10 L 45 16" fill="none" stroke="#1a0b2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1383,7 +1383,7 @@
       <ol class="recipe-steps">
         <li><strong>內袋：</strong>鮮奶油 + 糖 + 你自備的那種配料，封好。</li>
         <li><strong>外袋：</strong>冰塊 + 粗鹽（鹽降低冰點，讓溫度更低），把內袋丟進去封好。</li>
-        <li><strong>揹著跑！</strong> 全程 3 公里，跑步的晃動 = 攪拌動作，鮮奶油慢慢結冰。</li>
+        <li><strong>揹著跑！</strong> 全程 4 公里，跑步的晃動 = 攪拌動作，鮮奶油慢慢結冰。</li>
         <li>跑完打開內袋，就是一份新鮮的冰淇淋 ✨</li>
       </ol>
 
@@ -1432,7 +1432,7 @@
   <div class="sponsor-card">
     <div class="sponsor-brand">
       <span class="sponsor-tag">SPONSORED BY</span>
-      <img src="cerave-logo.jpg" alt="CeraVe 適樂膚" class="sponsor-logo" />
+      <img src="CeraVe%20logo.jpg" alt="CeraVe 適樂膚" class="sponsor-logo" />
     </div>
 
     <div class="sponsor-perks">
@@ -1628,15 +1628,16 @@
     for (let i = 1; i <= n; i++) {
       html += `
         <div class="friend-block">
-          <div class="friend-block-label">朋友 ${i}</div>
-          <input type="text" name="friend${i}Name" class="friend-input" placeholder="姓名" autocomplete="off" />
-          <input type="email" name="friend${i}Email" class="friend-input" placeholder="Email" autocomplete="off" />
+          <div class="friend-block-label">朋友 ${i} <span class="req">*</span></div>
+          <input type="text" name="friend${i}Name" class="friend-input" placeholder="姓名（必填）" autocomplete="off" required />
+          <input type="email" name="friend${i}Email" class="friend-input" placeholder="Email（必填）" autocomplete="off" required />
         </div>
       `;
     }
     html += `<p style="font-size:12px;color:#666;line-height:1.6;margin-top:4px;">
-      💡 報名成功後，所有人的資訊會整合在一封信寄給<strong>你（主登記者）</strong>。
-    </p>`;
+      💡 所有朋友的姓名與 Email 皆為<strong>必填</strong>，報名成功後所有人的資訊會整合在一封信寄給<strong>你（主登記者）</strong>。
+    </p>
+    <p class="err" id="friendsErr" style="margin-top:6px;">請完整填寫所有朋友的姓名與 Email</p>`;
     friendsDetailField.innerHTML = html;
     friendsDetailField.classList.add("show");
   }
@@ -1707,18 +1708,21 @@
       // 驗證每位朋友
       document.querySelectorAll(".friend-input").forEach(el => el.classList.remove("has-error"));
       const emailRe = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+      let friendsValid = true;
       for (let i = 1; i <= (n || 0); i++) {
         const nm = (payload[`friend${i}Name`] || "").trim();
         const em = (payload[`friend${i}Email`] || "").trim();
         if (!nm) {
           document.querySelector(`[name="friend${i}Name"]`).classList.add("has-error");
-          valid = false;
+          valid = false; friendsValid = false;
         }
         if (!em || !emailRe.test(em)) {
           document.querySelector(`[name="friend${i}Email"]`).classList.add("has-error");
-          valid = false;
+          valid = false; friendsValid = false;
         }
       }
+      const friendsErr = document.getElementById("friendsErr");
+      if (friendsErr) friendsErr.classList.toggle("show", !friendsValid);
     }
     if (!payload.frequency)     { showErr("frequency", true); valid = false; }
     if (!payload.reason)        { showErr("reason", true); valid = false; }
