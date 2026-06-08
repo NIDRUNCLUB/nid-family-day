@@ -275,6 +275,115 @@
   }
   .card-note{font-size:13px;font-weight:500;}
 
+  /* ───── ROUTE NOTICE (起終點提醒) ───── */
+  .route-notice{
+    padding:0 28px 20px;
+    max-width:1100px;
+    margin:0 auto;
+    position:relative;
+    z-index:2;
+  }
+  .route-notice-card{
+    background:var(--yolk);
+    border:3px solid var(--ink);
+    border-radius:24px;
+    padding:24px 28px;
+    box-shadow:var(--shadow);
+    display:flex;
+    align-items:center;
+    gap:20px;
+    position:relative;
+  }
+  .route-notice-icon{
+    font-size:56px;
+    line-height:1;
+    flex-shrink:0;
+  }
+  .route-notice-content{flex:1;}
+  .route-notice-label{
+    font-size:14px;
+    font-weight:700;
+    margin-bottom:14px;
+    letter-spacing:.02em;
+  }
+  .route-notice-flow{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .station{
+    background:#fff;
+    border:2.5px solid var(--ink);
+    border-radius:14px;
+    padding:10px 16px;
+    flex:1;
+    min-width:140px;
+    box-shadow:3px 3px 0 var(--ink);
+    position:relative;
+  }
+  .station.start{background:var(--mint);}
+  .station.finish{background:var(--pink);}
+  .station-tag{
+    display:inline-block;
+    font-family:'DM Mono',monospace;
+    font-size:9px;
+    letter-spacing:.2em;
+    background:var(--ink);
+    color:var(--cream);
+    padding:3px 8px;
+    border-radius:50px;
+    margin-bottom:6px;
+  }
+  .station strong{
+    display:block;
+    font-size:16px;
+    line-height:1.2;
+    margin-bottom:2px;
+  }
+  .station-exit{
+    font-size:13px;
+    font-weight:600;
+  }
+  .route-arrow{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:4px;
+    flex-shrink:0;
+  }
+  .route-arrow span{
+    font-family:'DM Mono',monospace;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.05em;
+    background:var(--ink);
+    color:var(--yolk);
+    padding:3px 10px;
+    border-radius:50px;
+  }
+  .route-arrow svg{
+    width:60px;
+    height:20px;
+  }
+  .route-notice-tip{
+    font-size:13px;
+    line-height:1.6;
+    margin-top:12px;
+    font-weight:600;
+  }
+  @media(max-width:600px){
+    .route-notice-card{
+      flex-direction:column;
+      text-align:center;
+      align-items:stretch;
+    }
+    .route-notice-icon{align-self:center;}
+    .route-notice-flow{flex-direction:column;}
+    .route-arrow{transform:rotate(90deg);margin:4px 0;}
+    .station{width:100%;}
+  }
+
   /* ───── HOW IT WORKS ───── */
   .how{
     padding:60px 28px 80px;
@@ -1158,9 +1267,9 @@
     <div class="card-note">Saturday · 週六</div>
   </div>
   <div class="card">
-    <div class="card-label">LOCATION / 集合地點</div>
-    <div class="card-value">新莊站</div>
-    <div class="card-note">捷運新莊站 3 號出口</div>
+    <div class="card-label">LOCATION / 集合 → 終點</div>
+    <div class="card-value">新莊→頭前庄</div>
+    <div class="card-note">出發：新莊站 2 號出口<br>終點：頭前庄站 1 號出口</div>
   </div>
   <div class="card">
     <div class="card-label">DISTANCE / 距離</div>
@@ -1176,6 +1285,36 @@
     <div class="card-label">FEE / 費用</div>
     <div class="card-value">免費</div>
     <div class="card-note">NID 學員專屬<br>非學員 NT$200/人</div>
+  </div>
+</section>
+
+<!-- ════════════ START/END NOTICE ════════════ -->
+<section class="route-notice">
+  <div class="route-notice-card">
+    <div class="route-notice-icon">🚇</div>
+    <div class="route-notice-content">
+      <p class="route-notice-label">⚠️ 起終點不同站，請特別注意！</p>
+      <div class="route-notice-flow">
+        <div class="station start">
+          <span class="station-tag">START</span>
+          <strong>捷運新莊站</strong>
+          <span class="station-exit">2 號出口</span>
+        </div>
+        <div class="route-arrow">
+          <span>3 公里</span>
+          <svg viewBox="0 0 60 20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 2 10 L 50 10" stroke="#1a0b2e" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4"/>
+            <path d="M 45 4 L 56 10 L 45 16" fill="none" stroke="#1a0b2e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="station finish">
+          <span class="station-tag">FINISH</span>
+          <strong>捷運頭前庄站</strong>
+          <span class="station-exit">1 號出口</span>
+        </div>
+      </div>
+      <p class="route-notice-tip">💡 跑完直接在頭前庄站搭車，不用走回新莊站！</p>
+    </div>
   </div>
 </section>
 
